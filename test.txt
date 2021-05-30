@@ -3,4 +3,4 @@ I am learning how to use git
 test2
 Git is free software distributed under the GPL
 Git tracks changes of files
- 
+this is a test2 
