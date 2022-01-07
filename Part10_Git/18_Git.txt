@@ -1,0 +1,53 @@
+Git
+	创建仓库
+		git init
+		git add <file>
+			可反复多次使用，添加多个文件
+		git commit -m <message>
+	查看信息
+		git status
+			仓库当前的状态
+		git diff
+			差异对比
+		git log
+			历史记录，提交日志
+			--pretty=oneline
+			commit id（版本号）
+		git reflog
+			查看命令历史，记录每一次命令
+	版本回退
+		git reset --hard 版本
+			HEAD表示当前版本
+			上一个版本就是HEAD^
+			上上一个版本就是HEAD^^
+			往上100个版本HEAD~100
+		git reset --hard 版本号（commit id前几位）
+			Git在内部有个指向当前版本的HEAD指针，
+当你回退版本的时候，Git仅仅是把HEAD从指向那个版本
+	版本检出
+		git checkout -- file
+			丢弃工作区的修改
+				修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态
+				已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态
+		git checkout -b <branchname>
+			加上-b参数表示创建新分支并切换
+		git rm
+		git branch
+			列出所有分支，当前分支前面会标一个*号
+			git branch -d dev
+				删除dev分支
+			查看分支：git branch
+创建分支：git branch <name>
+切换分支：git checkout <name>或者git switch <name>
+创建+切换分支：git checkout -b <name>或者git switch -c <name>
+合并某分支到当前分支：git merge <name>
+删除分支：git branch -d <name>
+		git merge <branchName>
+			合并指定分支branchName到当前分支
+	远程库
+		关联远程库
+			git remote add origin <链接>
+				关联一个远程库时必须给远程库指定一个名字，origin是默认习惯命名
+		克隆远程库
+			git clone <repository> <directory>
+				Git支持多种协议，包括https，但ssh协议速度最快
