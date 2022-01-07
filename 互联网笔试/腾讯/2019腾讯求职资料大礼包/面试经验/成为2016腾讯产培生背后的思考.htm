@@ -1,0 +1,450 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="keywords" content="互联网运营,运营推广,产品运营"/>
+  <meta name="description" content="前两天拿到了今年（2016年）腾讯产培生的offer，一直在想怎么样能写一篇文章出来，回馈之前所有看过的面经的作者，也能够对这次独一无二的经历进行一些复盘和总结。于是有了此文。这篇文章不会讨论面试的细节，也不会讨论怎么样去获得一个产品岗位的offer，只是单纯的记录下面试前后这十几天对于产品，对于产品经理，一些笼统的不成体系的思考。如果对正在路上和我一样萌新的产品狗能有些触动，那我就不枉抛砖引玉一回。"/>
+  <meta name="baidu-site-verification" content="4ZiB0zuPAT" />
+  <title>成为2016腾讯产培生背后的思考 - 姑婆那些事儿官网</title>
+  <link rel="shortcut icon" href="//s1.gupowang.com/assets/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="//s1.gupowang.com/assets/favicon.ico" type="image/x-icon">
+  <link href="//s1.gupowang.com/dist/static/css/article/view.c3adae9d7670289aa4d5bdc17de6fb39.css" rel="stylesheet">
+  <link href="/dist/static/css/top.css" rel="stylesheet">
+<style type="text/css">
+ a .icon-tougao2 {
+    width: 20px;
+    height: 16px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-image: url(http://s1.gupowang.com/dist/static/img/contribute.1771844.png);
+  }
+ a:hover .icon-tougao2 {
+    width: 20px;
+    height: 16px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-image: url(http://s1.gupowang.com/dist/static/img/contribute_hover.341f2cd.png);
+  }
+  .news-info .icon-hit {
+    width: 20px;
+    height: 14px;
+    background-image: url(//s1.gupowang.com/dist/static/img/hit.9774cd3.png);
+  }
+  .comment-textarea {
+    width: 90%;
+  }
+  .comment-resubmit a {
+    display: inline-block;
+    height: 32px;
+    line-height: 32px;
+    color: #fff;
+    padding: 0 20px;
+    background: #0078ff;
+    border-radius: 3px;
+  }
+  .comment-item-re {
+    margin-top: 10px;
+    overflow: hidden;
+    margin-left: 30px;
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <div class="header">
+    <div class="header-bd clear">
+      <h1 class="logo">
+        <a href="/"></a>
+      </h1>
+      <ul class="menu">
+
+        <li class="menu-item  on "><a href="/">资讯</a></li>
+
+        <li class="menu-item "><a href="/tag/10" target="_blank">活动</a></li>
+        <li class="menu-item "><a href="/tag/226" target="_blank">姑婆圈</a></li>
+        <li class="menu-item menu-sub">
+          <a href="#">推广
+            <i class="icon icon-arrow-down"></i>
+          </a>
+          <ul>
+			<li><a href="/appbaojia" target="_blank">推广渠道</a></li>
+            <li><a href="/product" target="_blank">找渠道</a></li>
+            <li><a href="/article/view/10539" target="_blank">推广刊例</a></li>
+          </ul>
+        </li>
+        <!-- <li class="menu-item"><a href="/article/view/10539" target="_blank">推广服务</a></li> -->
+      </ul>
+      <ul class="user-opts clear">
+        <li>
+          <form action="/search.html" name="search" method="get">
+            <table border="0" align="center" cellpadding="0" cellspacing="0" class="tab_search">
+              <tr>
+                <td>
+                  <input type="text" name="q" title="Search" class="searchinput" id="searchinput" onkeydown="if (event.keyCode==13) {}" onblur="if(this.value=='')value='请输入关键字';" onfocus="if(this.value=='请输入关键字')value='';" value="请输入关键字" size="10"/>
+                </td>
+                <td>
+                  <input type="image" width="21" height="17" class="searchaction" onclick="if(document.forms['search'].searchinput.value=='- Search Products -')document.forms['search'].searchinput.value='';" alt="Search" src="/dist/img/magglass.gif" border="0" hspace="2"/>
+                </td>
+              </tr>
+            </table>
+          </form>
+        </li>
+        <li>
+          <a href="#" class="weixin"><i class="icon icon-wechat-official"></i>公众号</a>
+          <div class="weixin-pop">
+            <i class="icon icon-arrow-top"></i>
+            <div class="qrcode-wp">
+              <div class="qrcode"></div>
+              <div class="desc">微信扫一扫关注<br><strong>姑婆那些事儿公众号</strong></div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="/center/writing" class="tougao" target="_blank"><i class="icon icon-contribute"></i>投稿</a>
+          
+        </li>
+        <li>
+          <is-signed-in></is-signed-in>
+        </li>
+        <csrf value="" v-on:csrf-ready="updateCSRF"> </csrf>
+        <!-- <meta name="_csrf" content="" :content="csrf"/> -->
+
+        <!-- <li><a href="#" class="signin">登录</a></li> -->
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="wrap">
+    <div class="main">
+      <div class="news-hd">
+        <!-- <img src="//s1.gupowang.com/assets/images/news_view.jpg" width="890px" height="300px" /> -->
+        <img src="http://s1.gupowang.com/2016/10/201610141476408741697783.jpg!890x300.2" width="890px" height="300px" />
+        <h2 class="title">成为2016腾讯产培生背后的思考</h2>
+      </div>
+      <div class="news-bd">
+        <div class="news-info">
+          <div class="news-tags">
+
+            
+          </div>
+          <div class="news-date">
+            <i class="icon icon-clock"></i>
+            10个月前          </div>
+          <div class="news-opts">
+            <a href="#" class="hits"><i class="icon icon-hit"></i>1676</a>
+            <a href="javascript:;" @click="fav">
+              <i class="icon icon-fav icon-faved" v-if="faved === 1"></i>
+              <i class="icon icon-fav" v-else></i>
+              0            </a>
+            <a href="#news-comment"><i class="icon icon-comment"></i>0</a>
+          </div>
+        </div>
+        <div class="news-cont">
+          <p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-align: center;"><img title="201610141476408741697783.jpg" alt="t014aed5a56bc31b8e2.jpg" src="http://s1.gupowang.com/2016/10/201610141476408741697783.jpg"/></p><p style="text-align: center;"><span style="color: rgb(127, 127, 127);">来源|互联派&nbsp; ID:hulianpai</span></p><p style="text-align: center;"><span style="color: rgb(127, 127, 127);">作者|黄海松</span></p><p>&nbsp;</p><p style="text-indent: 2em;"><span style="font-size: 16px;"><strong>前言:</strong></span></p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">前两天拿到了今年（2016年）腾讯产培生的offer，一直在想怎么样能写一篇文章出来，回馈之前所有看过的面经的作者，也能够对这次独一无二的经历进行一些复盘和总结。于是有了此文。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">这篇文章不会讨论面试的细节，也不会讨论怎么样去获得一个产品岗位的offer，只是单纯的记录下面试前后这十几天对于产品，对于产品经理，一些笼统的不成体系的思考。如果对正在路上和我一样萌新的产品狗能有些触动，那我就不枉抛砖引玉一回。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">最后，感谢腾讯公司的不拘一格降人才，感谢我的家人，朋友，和同事们。也祝同学们校招顺利。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;"><span style="font-size: 16px;"><strong>背景：</strong></span></p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">腾讯产培生是腾讯公司培养产品经理的一个精英项目，每年全球大约招聘30人左右。大概会从15000个简历投递者中筛选出1500位面试者，然后经过群面-专业面-HR面-总监面 每轮大概淘汰80%的面试者。这次面试促使我从头到尾的反复梳理了自己一年来的产品历程，也对一些产品方面的问题进行了深入的思考，记录如下。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;"><span style="font-size: 16px;"><strong>开放性问题向封闭性问题的转变</strong></span></p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">这是猎豹的傅盛先生提出来的一个很重要的观念。也是我面试前后，包括现在一直在反复思考的概念。一般来说，我们在学校里接受的绝大部分训练，都是如何快速高效的解决一个『封闭性问题』。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">封闭性问题的意思是，这个问题有着固定的开始与一个被预设好的结尾。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">拿产品工作举个例子：将商品详情页面的『购买按钮』的转化率提升30%以上。这个问题就是个很典型的封闭性问题。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">封闭性问题的典型特征，就是有解。实际上区别『封闭性问题』与『开放性问题』最基本的特征，就是是否有个一定的解决方案。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">大家都应该听说过一个很有意思的故事：高斯的老师把一个几百年没有被解决的问题，尺规作正20边型当做课后作业布置给高斯，结果高斯一个晚上就解决了。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">这个故事真正的洞见在于：高斯的老师把一个开放性问题转变成了一个封闭性问题。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">在高斯之前，所有的数学家都不确定是否能用尺规去做正20边型，但是高斯老师传达给高斯的这个问题的隐含条件，就是『正20边型可以用尺规做出来，你需要的只是找出来这个方法』。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">拿傅盛先生本人的事情来举例。有人问他，在做成360安全软件这么一个牛逼的产品中，是您的功劳大，还是周鸿祎先生的功劳大。傅盛先生说：以前觉得自己功劳大，现在觉得周先生功劳大。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">实际上这背后的逻辑就是，周鸿祎先生把一个最大的开放性问题：</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">『我们要做什么？』转变为『我们要做安全软件』这样一个封闭性问题。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">这个『我们要做什么样的安全软件？』的次一级开放性问题，又被傅盛先生转变为『做全中国最好的免费安全软件』这样一个封闭性问题。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">而事情到了这一步，接下来就是傅盛先生的能力问题了。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;"><span style="font-size: 16px;"><strong>风口</strong></span></p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">雷军说：站在风口上猪也可以飞起来。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">我所非常佩服的两位业内顶尖的产品经理/创业者，傅盛先生和纯银V先生，都专门对这句话进行了很长的文章的解读。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;"><strong><span style="color: rgb(127, 127, 127);">最近跟VC，FA聊得很多。我们聊到一件事，很多特别红特别火的产品，在创立初期，创始人其实想不到它能做这么大，最后为什么会做大呢，除了创始人厉害之外，主要的原因是恰好符合市场的潮流。甚至于创始人自己也想象不到，市场的潮流能将产品推到如此高度。</span></strong></p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;"><strong><span style="color: rgb(127, 127, 127);">这就是雷军雷师傅所说的“风口”。</span></strong></p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;"><strong><span style="color: rgb(127, 127, 127);">我把产品分成三类：“不成功的，存活下来的，成功的。”不成功的理由千奇百怪；存活下来，则往往得益于创始团队过硬的素质；然而成功产品又是另一回事情，无一例外的，它们都在某一个特定的时间点上，把握住市场中潜伏的机遇。当市场中暗流涌动，成功产品的切入就像对准了位置的钻井一样，</span></strong><strong><span style="color: rgb(127, 127, 127);">就那么一下子，石油喷射而出。</span></strong></p><p style="text-align: right; text-indent: 2em;">——纯银V《风口与时运》</p><p style="text-align: right; text-indent: 2em;">&nbsp;</p><p style="text-align: left; text-indent: 2em;"><strong><span style="color: rgb(127, 127, 127);">所以，这一年我深切的体会：要花时间，把一个事情想清楚，站在一个更高的纬度看问题。我总结为——升维思考，降维打击。比别人更高的维度想清楚方向，执行的时候比别人更凶狠。</span></strong></p><p style="text-align: left; text-indent: 2em;">&nbsp;</p><p style="text-align: left; text-indent: 2em;"><strong><span style="color: rgb(127, 127, 127);">我一直认为，小米开打的时候，就是一场必赢的战争。市场容量，打法，切入点，雷总都想得很清楚。小米一上来就是做多大的问题。小米手机出来时，手机厂商都笑了。他们认为雷总没做过手机，没有经验。但实际上，雷总早已经在更高的维度想清楚了。一出手，几乎是居高临下的打击。</span></strong></p><p style="text-align: right; text-indent: 2em;">—傅盛《一家公司的CEO该如何做战略》</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">对于风口和趋势，我思考非常的浅。但是我相信产品经理的终极目标，还是寻找到一个巨大的时代性的风口，才能构建出一个真正伟大的产品。我们不能停止对风口的思考和挖掘。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;"><span style="font-size: 16px;"><strong>简单可依赖</strong></span></p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">惭愧的是，虽然拿到了腾讯的offer，但让我从方法论层面上获益最多的，是百度贴吧的创始人，百度著名产品经理：俞军先生。百度贴吧也是我的见识范围内能跟微信比肩的超一流产品。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">讲两个有意思的插曲来反映俞军先生的牛逼程度吧</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">1.之前读李志刚先生写王慧文先生和美团外卖的故事，讲到美团外卖团队每天都会在晨会上读一遍俞先生的『产品经理的十二条军规』时，不禁一笑，因为我个人遇到任何产品上的问题，也会掏出十二条军规研读再三，每每都能有收获。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">2.在HR面的时候和鹅厂王思聪，马毅老师聊到最牛逼的三位产品经理。我们俩公认的两位是：张小龙先生，俞军先生。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">『简单可依赖』实际上是对一个非常重要的开放性问题进行回应。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">即：<strong>『</strong><strong>什么是好的用户体验？』</strong></p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">这也是知乎上一个著名的问题。张小龙先生和俞军先生对此都进行了发人深省的阐述。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">对于目前的我来说，『简单可依赖』是我致力于达到的用户体验上的目标。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">拿滴滴打车举例，我认为滴滴打车是非常优秀的做到了用户体验上的简单可依赖。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">简单：对于用户来说，一键叫车，自动付款。真正需要你去操作的只是填写目的地（当然现在可以自动填充目的地）。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">从用户体验层面来说，滴滴打车已经做到了当前环境下所允许的最简单的操作。输入目的地，呼叫快车。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">可依赖：基本上在我的体验范围内，滴滴打车极少让我等待3分钟以上。并且95%的情况下都把我正确快速的送到了目的地。并且价格在绝大多数情况下让我非常满意。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">俞军大神对用户体验的回答引用如下<strong>：『我理解的用户体验，是让用户付出最小成本满足需求。』</strong></p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">最小成本=简单。满足需求=可依赖。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">只不过结合自己的经验来看，想把一件事情做得简单可依赖，需要非常深厚的产品功力，和对需求的深刻理解。我自己时常反思在这方面远不足，所以只能谈其大略了。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">再举个反面3例子来论证简单可依赖。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">纯银V老师，在氢气球项目失败后说到：</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;"><strong><span style="color: rgb(127, 127, 127);">我作为产品经理太执着于“产品驱动”，太着迷“独特的产品设计”，错过了机会。</span></strong></p><p style="text-indent: 2em;"><strong><span style="color: rgb(127, 127, 127);">如果3年前，我主打微信服务号而不是APP，一是团队能压缩到15人左右，一年运营费用不到500万；二是抓住公众号崛起的风口，极低成本吸过来几百万粉。而用户输入目的地名称，立刻返回精简又优秀的旅行攻略，正好迎合了攻略市场下行，但用户依然需要攻略的趋势。最后精准分发携程的旅行商品，从攻略到购买形成闭环。</span></strong></p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">实际上我对氢气球的使用体验的负面看法的核心就是：不够简单，不够清楚。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">因为好的产品和商业模式，是可以一句话简洁明了的说清楚的。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">纯银老师最后总结的<strong>『微信公众号输入目的地名称，立刻返回精简又优秀的旅行攻略』</strong>这是一个非常简洁优秀的设计。我从纯银老师的文章上学习到了很多，尤其是他探讨产品模型的系列文章，受益匪浅，谨祝他二次创业一切顺利。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;"><span style="font-size: 16px;"><strong>深入用户群体</strong></span></p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">如果让我回到12个月之前，给刚入行的我提一个建议。我会说，真真正正的去用户群体中去了解你的用户。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">我在专业面-HR面-总监面都举了自己遇到的一个事情。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">我的第一家公司是一个做二手票务交易平台的公司。在我作为产品助理刚入职的时候，面临着这样一个问题，我们的产品的成交率极低。当时这个问题束手无策，于是我和另外两位设计师同学就自掏腰包，找了十位用户，一位一位的去访谈和了解。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">访谈的时候我们发现了核心原因在于，用户和黄牛对而二手票的价格有着巨大的分歧。几乎所有的用户都无法准确的估计二手票的价格，因此用户报出的价格和市场价格有着巨大的分歧，所以黄牛自然不愿意成交。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">了解到这件事情后，我们就大胆的推翻了产品的购买逻辑，由用户报价，黄牛决定是否接受，转变为用户发出购买需求，多位黄牛报价，由用户选择。逻辑理顺了，自然成交量大幅改观。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">实际上我现在可能都形成了一种比较教条的观念，去一家新公司，一定要找到20位用户去做深度的访谈，而这种访谈绝对会推翻你很多对这个产品的错误观念，从中找出真正通往正确的道路。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;"><strong><span style="font-size: 16px;">群体效应的复杂性</span></strong></p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">张小龙先生曾经开过一个玩笑：如果有大学生面微信，说他读完过失控，他会毫不犹豫的录取。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">失控这本书老实讲我也没读完。但是其中关于群体的讨论我认为非常的发人深省。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">群体性的一个基本特征就是智商低下。事实上在产品设计的时候，俞军大神也指出：<strong><span style="color: rgb(127, 127, 127);">不要试图去教育用户。因为用户的智商和耐心实在是低的可怜。</span></strong></p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">另一方面，群体性又会产生非常复杂和混沌的生态。拿我中文互联网最钦佩的产品百度贴吧来说，百度贴吧的活跃性，多样性，复杂性都是无比让人吃惊的。百度贴吧并没有刻意的去引导用户的贪嗔痴，只是单纯的给予了人们一个聚集的地方，通过简单的规则就能产生所有人都羡慕的海量用户，高粘性。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">我时常想，现在的百度贴吧的产品经理真是幸福啊，只要会贴广告和给用户添堵就行了。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">对于群体效应，我的理解稀少的可怜，所以不是我不推崇张小龙，只是完全没有到讨论贪嗔痴，讨论人性，乃至讨论生态的那个段位和水平。在这里记下也是提醒自己在这方面要下功夫研究。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;"><span style="font-size: 16px;"><strong>产品的三重境界</strong></span></p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">这是在总监面的时候和腾讯征信的总监郑先生讨论时他总结的。我觉得总结的非常精辟，不敢掠美，记录于下：</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;"><strong><span style="color: rgb(127, 127, 127);">第一重境界是信心满满，对自己要做的事情非常的肯定。觉得做完以后用户就会滚滚而来。</span></strong></p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;"><strong><span style="color: rgb(127, 127, 127);">第二重境界是迷茫失落，产品发布后，乏人问津，不知道自己做的东西到底对还是不对，只能不停地去推广，拉用户改进。</span></strong></p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;"><strong><span style="color: rgb(127, 127, 127);">第三重境界是豁然开朗，要么自己做的东西被确认为是个伪需求，要么找到真正的核心点，捅破窗户纸，迎来爆发增长。</span></strong></p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;"><span style="font-size: 16px;"><strong>外部性</strong></span></p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">这是Larry Page在TED演讲时讨论到的。所谓外部性，也就是只有因为你做，才会出现在这个世界上的事情。这样的事情通常会被别人认为是『异想天开的』『极度困难的』『愚蠢的』。但是这种事情你做的越多，你就会获得越多的影响力。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">我认为做产品也是一样的，如果你做的产品是千篇一律的东西，那么做出来到底有什么意义？只有因为你设计并开发才存在于这个世界上的产品，才是真正能带来收获和洞见的产品。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">事实上，在腾讯的几轮面试中，讨论自己曾经独立做过的项目占了很大的比重，我认为这种独一无二的项目经验，是面试官所非常重视的。面试的时候仔细准备一些自己做过的外部性很强的事情，我认为应该是个很不错的谈资。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;"><span style="font-size: 16px;"><strong>独立思考的能力</strong></span></p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">Peter Thiel 在面试的时候会问一个很有意思的问题：在什么重大事项上你与别人有不同的意见？</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">我认为这个问题非常的巧妙，并且也非常的直指核心。这个问题实质想考察的是，<span style="color: rgb(127, 127, 127);"><strong>你是否具有独立思考的能力？</strong></span></p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">如果你觉得自己有独立思考的能力，不妨试着思考下以下几个问题。</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;">①为什么人们选择耗尽家庭的全部积蓄加大量负债去购买一线城市的房子？现在是否应该购买房子？</p><p style="text-indent: 2em;">②为什么婚姻是必须的？</p><p style="text-indent: 2em;">③为什么你需要有一辆车？</p><p style="text-indent: 2em;">④为什么你不应该去建立一家企业？</p><p style="text-indent: 2em;"><br/></p><p style="text-indent: 2em;">如果你发现这些问题看起来相当的奇怪，你就会发现一个很可怕的事实。</p><p style="text-indent: 2em;"><br/></p><p style="text-indent: 2em;"><span style="color: rgb(127, 127, 127);"><strong>『绝大多数人并没有对这些问题进行过独立的思考，影响他们的行为唯一理由是从众。』</strong></span></p><p style="text-indent: 2em;"><br/></p><p style="text-indent: 2em;">人们买房是因为所有的人都买房。人们结婚是因为所有的人都结婚。人们买车是因为所有的人都买车。人们不去尝试建立企业因为几乎绝大部分人不会去尝试建立企业。</p><p style="text-indent: 2em;"><br/></p><p style="text-indent: 2em;">所以我对Peter Thiel的问题的回答是：我几乎在所有的重大问题上都与别人有不同的意见。因为在我看来，绝大多数人对重大问题都不会进行思考，他们的意见就是群体的意见。而群体的意见往往是愚蠢的。</p><p style="text-indent: 2em;"><br/></p><p style="text-indent: 2em;">请允许我引用王兴的一句话：多数人为了逃避思考愿意做任何事情。</p><p style="text-indent: 2em;"><br/></p><p style="text-indent: 2em;">前段时间支付宝上线了『到位』功能。机缘巧合之下我看了下负责这个功能产品经理的公众号。我发现她在N个月之前对市面上所有的类似的竞品做了调研。而实际上，支付宝的『到位』功能我也并不觉得和这些竞品有什么分别。我没有看到这位产品经理的思考在哪里。</p><p style="text-indent: 2em;"><br/></p><p style="text-indent: 2em;">以前在实习公司的时候做产品，老板总会叫我们看竞品，看到合适的就拿过来抄。我也总拿俞军老师的『如果不知道该怎么做，就先看看别人怎么做的』这句话当偷懒的借口。</p><p style="text-indent: 2em;"><br/></p><p style="text-indent: 2em;">而现在我想重新思考关于竞品分析这件事。</p><p style="text-indent: 2em;"><br/></p><p style="text-indent: 2em;">我认为产品经理应该尽量避免去看直接竞品是怎么做的，他们怎么做的并不重要，重要的是你对用户的需求的理解。而需求不来自竞品分析。需求来自于你对用户的理解。</p><p style="text-indent: 2em;"><br/></p><p style="text-indent: 2em;">对于面试的看法</p><p style="text-indent: 2em;"><br/></p><p style="text-indent: 2em;">在我高中以后，我对所有的能力测试都抱有一种简单的态度：提高自己的能力。用实力而不是套路说话。</p><p style="text-indent: 2em;"><br/></p><p style="text-indent: 2em;">所以我对产品方面的面试有以下几个建议吧。</p><p style="text-indent: 2em;"><br/></p><p style="text-indent: 2em;">1. 认真梳理自己做过的产品，准备好作品集。</p><p style="text-indent: 2em;">2. 找一些自己真正觉得被打动的经历，这些经历也一定能打动别人。</p><p style="text-indent: 2em;">3. 群面的时候想象自己是一个真正想要解决这个问题的人，你的目标是解决问题而不是任何其他的。</p><p style="text-indent: 2em;">4.绝对诚实，知之为知之，简历上每一点都要能够如数家珍。</p><p style="text-indent: 2em;">5.绝对的自信，坚持自己。</p><p style="text-indent: 2em;"><br/></p><p style="text-indent: 2em;"><span style="font-size: 16px;"><strong>推荐的资料</strong></span></p><p style="text-indent: 2em;"><br/></p><p style="text-indent: 2em;">苏杰《人人都是产品经理》（入门）</p><p style="text-indent: 2em;">俞军《产品经理的12条军规》</p><p style="text-indent: 2em;">张小龙《微信背后的产品观》《8小时演讲》</p><p style="text-indent: 2em;">纯银V《产品模型系列文章》</p><p style="text-indent: 2em;">YC《YC创业课系列文章》</p><p style="text-indent: 2em;">&nbsp;</p><p style="text-indent: 2em;"><span style="color: rgb(38, 38, 38); font-size: 16px;"><strong>【相关阅读】</strong></span></p><p style="text-indent: 2em;"><a style="color: rgb(84, 141, 212); text-decoration: underline;" href="http://www.gupowang.com/yunying/5551.html" target="_blank"><span style="color: rgb(84, 141, 212);">做好活动运营，你需注意策划、准备、上线三阶段的这些要点</span></a></p><p style="text-indent: 2em;"><a style="color: rgb(84, 141, 212); text-decoration: underline;" href="http://www.gupowang.com/yunying/5551.html" target="_blank"><span style="color: rgb(84, 141, 212);">深度|从零搭建推荐体系：如何搭建标签体系？</span></a><span style="color: rgb(84, 141, 212);">&nbsp; </span></p><p style="text-indent: 2em;"><a style="color: rgb(84, 141, 212); text-decoration: underline;" href="http://www.gupowang.com/yunying/5550.html" target="_blank"><span style="color: rgb(84, 141, 212);">2016年后搞互联网创业，如何低成本获取用户？</span></a><span style="color: rgb(84, 141, 212);">&nbsp; </span></p><p style="text-indent: 2em;"><a style="color: rgb(84, 141, 212); text-decoration: underline;" href="http://www.gupowang.com/yunying/5518.html" target="_blank"><span style="color: rgb(84, 141, 212);">从用户需求出发：云音乐Vs虾米音乐VsQQ音乐竞品分析</span></a><span style="color: rgb(84, 141, 212);">&nbsp; </span></p><p style="text-indent: 2em;"><a style="color: rgb(84, 141, 212); text-decoration: underline;" href="http://www.gupowang.com/yunying/5517.html" target="_blank"><span style="color: rgb(84, 141, 212);">产品运营|从社交动机，行为方式，关系链看社交产品</span></a><span style="color: rgb(84, 141, 212);">&nbsp; </span></p><p style="text-indent: 2em;"><br/></p><p style="line-height: 29px; text-indent: 32px;"><strong><span style="color: rgb(85, 85, 85); font-family:;">姑婆那些事儿推广服务</span></strong><strong><span style="color: rgb(62, 62, 62); font-family:;">&nbsp;</span></strong><strong><span style="color: rgb(62, 62, 62); font-family:;">点击&nbsp;</span></strong><strong><span style="color: rgb(62, 62, 62); font-family: 宋体; font-size: 14px;">:</span></strong><a href="http://www.gupowang.com/news/4585.html"><span style="color: rgb(59, 141, 209); font-family:;">http://www.gupowang.com/news/4585.html</span></a></p><p style="background: white; line-height: 25px; text-indent: 28px;"><span style="color: rgb(62, 62, 62); font-family:;">大家都爱搜:</span><a href="http://www.gupowang.com/tags-1139.html"><span style="color: rgb(59, 141, 209); font-family:;">ASM</span></a><span style="color: rgb(62, 62, 62); font-family:;">&nbsp;</span><a title="互联网资讯" href="http://www.gupowang.com/news/"><span style="color: rgb(59, 141, 209); font-family:;">互联网资讯</span></a><a title="类类有话说" href="http://www.gupowang.com/author-6/"><span style="color: rgb(59, 141, 209); font-family:;">类类有话说</span></a><a title="App推广" href="http://www.gupowang.com/app/"><span style="color: rgb(59, 141, 209); font-family:;">App推广</span></a><a title="运营经验" href="http://www.gupowang.com/yunying/"><span style="color: rgb(59, 141, 209); font-family:;">运营经验</span></a><a title="线下推广" href="http://www.gupowang.com/xianxia/"><span style="color: rgb(59, 141, 209); font-family:;">线下推广</span></a><a title="活动推荐" href="http://www.gupowang.com/huodong/"><span style="color: rgb(59, 141, 209); font-family:;">活动推荐</span></a><a title="微信营销" href="http://www.gupowang.com/weixin/"><span style="color: rgb(59, 141, 209); font-family:;">微信营销</span></a><a title="姑婆专题" href="http://www.gupowang.com/zhuanti/"><span style="color: rgb(59, 141, 209); font-family:;">姑婆专题</span></a><a title="姑婆圈" href="http://www.gupowang.com/quan/"><span style="color: rgb(59, 141, 209); font-family:;">姑婆圈</span></a><a title="ASO" href="http://www.gupowang.com/tags-13.html"><span style="color: rgb(59, 141, 209); font-family:;">ASO</span></a><a title="校园推广" href="http://www.gupowang.com/tags-5.html"><span style="color: rgb(59, 141, 209); font-family:;">校园推广</span></a><a title="地推" href="http://www.gupowang.com/tags-24.html"><span style="color: rgb(59, 141, 209); font-family:;">地推</span></a><a title="ASO100" href="http://www.gupowang.com/tags-409.html"><span style="color: rgb(59, 141, 209); font-family:;">ASO100</span></a><a title="渠道刷量" href="http://www.gupowang.com/tags-410.html"><span style="color: rgb(59, 141, 209); font-family:;">渠道刷量</span></a><a title="校园运营团队" href="http://www.gupowang.com/tags-411.html"><span style="color: rgb(59, 141, 209); font-family:;">校园运营团队</span></a></p><p style="background: white; line-height: 25px; text-indent: 28px;"><strong><span style="color: rgb(0, 176, 80); font-family:;">姑婆</span></strong><strong><span style="color: rgb(247, 150, 70); font-family:;">那些事儿</span></strong><span style="color: rgb(85, 85, 85); font-family:;">(</span><a href="http://www.gupowang.com/"><span style="color: rgb(59, 141, 209); font-family:;">www.gupowang.com</span></a><span style="color: rgb(85, 85, 85); font-family:;">)是互联网推广运营知识分享平台,关注移动推广(android,ios)运营,网站推广运营、校园推广及互联网领域最新动态&nbsp;。欢迎关注我们的微信(gupo520),新浪微博(姑婆那些事儿)。</span></p><p style="text-indent: 2em;"><span style="color: rgb(89, 89, 89); font-family:;">版权声明:本文来源于互联网,仅作分享学习之用,姑婆那些事儿负责整理推荐。文章仅代表原作者独立观点,不代表本平台运营者观点与立场。如有版权问题,请联系姑婆那些事儿—小秘书(微信号:gpxms001)协商解决</span></p>        </div>
+        <div class="news-fav">
+          <a href="javascript:;" @click="fav">
+            <i class="icon icon-fav-view icon-faved" v-if="faved === 1"></i>
+            <i class="icon icon-fav-view" v-else></i>收藏
+          </a>
+          <p class="count">{{favCount}}</p>
+          <p>个人收藏</p>
+        </div>
+        <div class="news-tougao">
+          投稿请戳这里！<a href="/center/writing" target="_blank">投稿</a>
+        </div>
+        <div class="news-share">
+          <div class="shared">
+            <span>0</span>
+            <p>次分享</p>
+          </div>
+          <div class="share-icon">
+            <ul>
+              <li>
+                <a href="javascript:;" class="icon-weixin"></a>
+                <div class="weixin-pop">
+                  <i class="icon icon-arrow-left"></i>
+                  <div class="qrcode-wp">
+                    <div class="qrcode">
+
+                      <img src="/m/article/view/5568/qr" alt="文章二维码" width="120" height="120" />
+                    </div>
+                    <div class="desc">扫描左侧二维码<br/>分享到微信</div>
+                  </div>
+                </div>
+              </li>
+              <!-- <li><a href="#" class="icon-weibo"></a></li> -->
+              <!-- <li><a href="#" class="icon-qq"></a></li>
+              <li><a href="#" class="icon-twitter"></a></li>
+              <li><a href="#" class="icon-linkin"></a></li>
+              <li><a href="#" class="icon-douwan"></a></li>
+              <li><a href="#" class="icon-qzone"></a></li> -->
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="news-comment">
+        <a name="news-comment"></a>
+        <div class="comment-hd">
+          <h3>文章评论(<span>0</span>)</h3>
+        </div>
+        <div class="comment-list">
+          <div class="comment-item comment-form clear">
+            <div v-if="user.uid" class="comment-face">
+              <img :src="user.avatar" width="40px" height="40px" />
+            </div>
+            <div v-if="user.uid" class="comment-cont">
+              <div class="comment-name"> {{ user.nickname }}</div>
+            </div>
+            <div class="comment-area">
+              <textarea v-model="content"></textarea>
+            </div>
+            <div class="comment-submit">
+              <a v-if="user.uid" href="javascript:;" @click="subComment">发表评论</a>
+              <div v-else>
+                <a href="javascript:;" @click="signIn">登录</a> 进行评论
+              </div>
+            </div>
+          </div>
+          <comment-item
+                  v-for="(comment, index) in comments"
+                  v-bind:comment="comment"
+                  v-bind:index="index"
+          ></comment-item>
+        </div>
+
+        <div class="comment-more">
+          <a v-if="loadStatus === 1" @click="getComments" href="javascript:;">加载更多<i class="icon icon-arrow-down"></i></a>
+          <span v-if="loadStatus === 2" class="loading"><i class="icon-loading"></i>正在加载中...</span>
+          <span v-if="loadStatus === 0" class="no-more">没有更多了</span>
+        </div>
+      </div>
+    </div>
+    <div class="side">
+      <div class="author-info">
+
+        <div class="author-face">
+          <a href="/author/201" target="_blank" class="edit">
+            <img src="http://s1.gupowang.com/2017/02/24/avatar.jpg!100x100" width="100px" height="100px" />
+          </a>
+        </div>
+        <div class="author-name">姑婆 <a href="/author/201" target="_blank" class="edit">编辑</a></div>
+        <div class="author-count">文章总数 <span>4471</span></div>
+        <div class="author-desc">
+          姑婆主编        </div>
+        <a href="/center/writing" target="_blank" title="投稿" class="icon">
+          <i class="icon icon-tougao2"></i>
+        </a>
+
+      </div>
+      <div class="side-column">
+        <div class="column-hd">
+          <h3>热门文章</h3>
+        </div>
+        <div class="column-bd">
+
+
+          <div class="item">
+            <div class="pic">
+              <a href="/article/view/6481" target="_blank">
+                <img src="http://s1.gupowang.com/2017/02/201702161487230411393615.jpg!100x66" width="100px" height="66px" />
+              </a>
+            </div>
+            <div class="title"><a href="/article/view/6481" target="_blank">如何持续找到优质转载内容？</a></div>
+          </div>
+
+          <div class="item">
+            <div class="pic">
+              <a href="/article/view/6475" target="_blank">
+                <img src="http://s1.gupowang.com/2017/02/201702151487145851463589.jpg!100x66" width="100px" height="66px" />
+              </a>
+            </div>
+            <div class="title"><a href="/article/view/6475" target="_blank">聊聊APP运营推广都需要哪些数据分析</a></div>
+          </div>
+
+          <div class="item">
+            <div class="pic">
+              <a href="/article/view/6471" target="_blank">
+                <img src="http://s1.gupowang.com/2017/02/201702151487123617895560.jpg!100x66" width="100px" height="66px" />
+              </a>
+            </div>
+            <div class="title"><a href="/article/view/6471" target="_blank">实操 | 推广别懵逼，8年经验运营老手教你微信公众号投放策略</a></div>
+          </div>
+
+          <div class="item">
+            <div class="pic">
+              <a href="/article/view/6465" target="_blank">
+                <img src="http://s1.gupowang.com/2017/02/201702131486969931260871.jpg!100x66" width="100px" height="66px" />
+              </a>
+            </div>
+            <div class="title"><a href="/article/view/6465" target="_blank">优秀的用户运营，是怎样解决被琐碎小事包围这个难题的？ </a></div>
+          </div>
+
+          <div class="item">
+            <div class="pic">
+              <a href="/article/view/6462" target="_blank">
+                <img src="http://s1.gupowang.com/2017/02/201702091486637833434214.jpg!100x66" width="100px" height="66px" />
+              </a>
+            </div>
+            <div class="title"><a href="/article/view/6462" target="_blank">运营总监力推！如何写一份优秀的活动策划与执行方案？</a></div>
+          </div>
+
+          <div class="item">
+            <div class="pic">
+              <a href="/article/view/6458" target="_blank">
+                <img src="http://s1.gupowang.com/2017/02/201702081486531345818028.jpg!100x66" width="100px" height="66px" />
+              </a>
+            </div>
+            <div class="title"><a href="/article/view/6458" target="_blank">社群运营之我见 </a></div>
+          </div>
+
+          <div class="item">
+            <div class="pic">
+              <a href="/article/view/6453" target="_blank">
+                <img src="http://s1.gupowang.com/2017/02/201702071486449574992507.jpg!100x66" width="100px" height="66px" />
+              </a>
+            </div>
+            <div class="title"><a href="/article/view/6453" target="_blank">这是用户真实需求？你确定？</a></div>
+          </div>
+
+          <div class="item">
+            <div class="pic">
+              <a href="/article/view/6451" target="_blank">
+                <img src="http://s1.gupowang.com/2017/02/201702071486447171986063.jpg!100x66" width="100px" height="66px" />
+              </a>
+            </div>
+            <div class="title"><a href="/article/view/6451" target="_blank">说说为什么要做苹果竞价智能投放平台：偏执人格与匠心精神</a></div>
+          </div>
+
+          <div class="item">
+            <div class="pic">
+              <a href="/article/view/6450" target="_blank">
+                <img src="http://s1.gupowang.com/2017/02/201702071486440903668713.jpg!100x66" width="100px" height="66px" />
+              </a>
+            </div>
+            <div class="title"><a href="/article/view/6450" target="_blank">App推广要做哪些事？懂渠道，做方案，有人脉，分析竞品… </a></div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-bd clear">
+      <dl class="info">
+        <dt></dt>
+        <dd>分享互联网运营推广知识，涵盖移动互联网推广运营、网站推广运营、App深度报道、互联网行业分析等领域。</dd>
+      </dl>
+      <dl class="about">
+        <dt>关于我们</dt>
+        <dd>
+          <ul>
+            <li><a href="/article/view/9196" target="_blank">关于姑婆</a></li>
+            <li><a href="/article/view/9204" target="_blank">联系我们</a></li>
+            <li><a href="/article/view/9213" target="_blank">商务合作</a></li>
+            <li><a href="/article/view/10234" target="_blank">诚聘英才</a></li>
+          </ul>
+        </dd>
+      </dl>
+      <dl class="follow">
+        <dt>关注我们</dt>
+        <dd>
+          <ul>
+            <li><a href="#"><i class="icon icon-weixin"></i>微信</a>
+              <div class="weixin-pop">
+                <i class="icon icon-arrow-left"></i>
+                <div class="qrcode-wp">
+                  <div class="qrcode"></div>
+                  <div class="desc">微信扫一扫关注<br><strong>姑婆那些事儿公众号</strong></div>
+                </div>
+              </div>
+            </li>
+            <li><a href="http://weibo.com/gupo520" target="_blank"><i class="icon icon-weibo"></i>微博</a></li>
+            <li><a href="https://www.zhihu.com/people/gupowang" target="_blank"><i class="icon icon-zhihu"></i>知乎</a></li>
+          </ul>
+        </dd>
+      </dl>
+      <dl class="partner">
+        <dt>合作伙伴</dt>
+        <dd>
+          <ul>
+            <li><a href="http://www.reyun.com/" target="_blank"><img src="//s1.gupowang.com/partner/reyun_logo.png?v=6"></a></li>
+            <li><a href="http://www.liangjianghu.com/" target="_blank"><img src="//s1.gupowang.com/partner/liangjianghu.jpg"></a></li>
+            <li><img src="//s1.gupowang.com/assets/images/p_3.png"></li>
+            <li><img src="//s1.gupowang.com/assets/images/p_4.png"></li>
+            <li><img src="//s1.gupowang.com/partner/yw98_logo.png?v=6"></li>
+            <li><img src="//s1.gupowang.com/assets/images/p_6.png"></li>
+            <li><a href="http://www.135editor.com/" target="_blank"><img src="//s1.gupowang.com/partner/135editor.png"></a></li>
+          </ul>
+        </dd>
+      </dl>
+    </div>
+    <div class="copyright">
+      Copyright 姑婆那些事儿.Some Rights Reserved. <a href="#">苏ICP备15016929号-1</a>
+    </div>
+  </div>
+
+  <div class="backtop">
+    <ul>
+      <li>
+        <a class="icon icon-qrcode" href="javascript:;"></a>
+        <div class="weixin-pop">
+          <i class="icon icon-arrow-right"></i>
+          <div class="qrcode-wp">
+            <div class="qrcode"></div>
+            <div class="desc">微信扫一扫关注<br><strong>姑婆那些事儿公众号</strong></div>
+          </div>
+        </div>
+      </li>
+      <li @click="backTop"><a class="icon icon-arrow-up" href="javascript:;"></a></li>
+    </ul>
+  </div>
+  <pop-up :message="message"></pop-up>
+
+  <signin-panel></signin-panel>
+
+  <script>
+      var _hmt = _hmt || [];
+      (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?4d938b1ed7a440e3bd5f0c78f02ad321";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
+
+<script type="text/javascript" src="/dist/static/js/jquery-1.10.2.min.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+
+        showLogin();
+		
+		$(".news-cont").find("a").attr('target','_blank');
+
+    });
+    function showLogin() {
+        var needLogin = getQueryString("needLogin");
+        if (needLogin == 1) {
+            alert("请先点右上角登录按钮进行登录");
+        }
+    }
+    function getQueryString(name) {
+        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            return unescape(r[2]);
+        }
+        return null;
+    }
+</script>
+
+
+</div>
+<script type="text/javascript" src="//s1.gupowang.com/dist/static/js/manifest.c05c399995ffdd36a2cf.js"></script><script type="text/javascript" src="//s1.gupowang.com/dist/static/js/vendor.c8034f033b365291123b.js"></script><script type="text/javascript" src="/dist/static/js/article/view.js?v=101"></script></body>
+</html>
